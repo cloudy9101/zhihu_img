@@ -25,7 +25,7 @@ class SingleSpider
   end
 
   def title
-    @doc.xpath("//h2[@class='zm-item-title zm-editable-content']").text.to_s
+    @doc.xpath("//h2[@class='zm-item-title zm-editable-content']").text.to_s.gsub(/[^\w|\p{Han}]/, '')
   end
 end
 
